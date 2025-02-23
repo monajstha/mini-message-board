@@ -1,0 +1,33 @@
+<form method="post" action="/new">
+  <h2>Send your message!</h2>
+  <div
+    style="
+      width: fit-content;
+      /* background-color: aquamarine; */
+      height: fit-content;
+    "
+  >
+    <textarea
+      rows="5"
+      type="text"
+      id="text"
+      name="messageText"
+      placeholder="Type your message.."
+      style="margin: 8px 0px 8px 0px"
+    ></textarea>
+
+    <input
+      style="display: block; width: 183px"
+      type="text"
+      id="user"
+      name="messageUser"
+      placeholder="Type your name.."
+    />
+    <button
+      style="display: flex; justify-self: flex-end; margin-top: 8px"
+      type="submit"
+    >
+      Send
+    </button>
+  </div>
+</form>
