@@ -1,9 +1,34 @@
 <html>
   <head>
     <link rel="stylesheet" href="/styles.css" />
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+
+        const messageText = document.getElementById("text").value.trim();
+        const messageUser = document.getElementById("user").value.trim();
+
+        if (!messageText) {
+          alert("Message cannot be empty!");
+          return;
+        }
+
+        if (!messageUser) {
+          alert("Please enter your name!");
+          return;
+        }
+        // If validation passes, submit the form
+        document.getElementById("newMessageForm").submit();
+      }
+    </script>
   </head>
   <body>
-    <form method="post" action="/new">
+    <form
+      id="newMessageForm"
+      method="post"
+      action="/new"
+      onsubmit="validateForm(event)"
+    >
       <h3>Send your message to the world!</h3>
       <div class="inputContainer">
         <textarea
