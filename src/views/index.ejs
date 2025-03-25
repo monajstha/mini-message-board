@@ -1,7 +1,29 @@
-<ul>
-  <% messages.forEach((message) => { %>
-  <p><%= message.text %></p>
-  <p><%= message.user %></p>
-  <p><%= message.added %></p>
-  <%} ) %>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <%- include('header') %>
+    <div class="messagesDiv">
+      <!-- <ul> -->
+      <% messages.forEach((message, index) => { %>
+      <a class="message" href="/messages/<%= index %>">
+        <!-- <a href="/<%= index %>"> -->
+        <div class="avatar"><%= getAvatarInitials(message.user) %></div>
+        <div>
+          <p class="user"><%= message.user %></p>
+          <p class="messageText"><%= message.text %></p>
+          <p class="date"><%= message.added %></p>
+        </div>
+        <!-- </a> -->
+      </a>
+
+      <%} ) %>
+      <!-- </ul> -->
+    </div>
+  </body>
+</html>

@@ -1,15 +1,130 @@
-h3 {
-  color: "red";
+body {
+  padding: 0 38px;
 }
 
-.inputContainer {
-  width: fit-content;
-  height: fit-content;
-  background-color: red;
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited,
+a:active,
+a::after,
+a:hover {
+  font-weight: bold;
+}
+
+.active {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 6px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > h1 {
+  width: 70%;
+}
+
+nav {
+  width: 30%;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navList > li {
+  list-style: none;
+}
+
+.nameInput {
+  width: 20%;
+  height: 30px;
 }
 
 .messageBox {
-  display: block;
-  width: 183px;
-  margin: 8px 0px 8px 0px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sendBtn {
+  display: flex;
+  justify-self: flex-end;
+  margin-top: 8px;
+  width: 130px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Messages */
+.messagesDiv {
+  border: 1px solid black;
+  width: 97%;
+}
+
+.message {
+  display: flex;
+  /* border-bottom: 0.5px solid gray; */
+  padding: 12px;
+  cursor: pointer;
+  /* background-color: red; */
+  /* margin: 0; */
+  /* align-items: start; */
+}
+
+.messagesDiv .message:nth-child(odd) {
+  background-color: rgb(255, 255, 255);
+}
+
+.messagesDiv .message:nth-child(even) {
+  background-color: rgb(234, 249, 255);
+}
+
+.messagesDiv .message:last-child {
+  border: none;
+}
+
+.message > p {
+  margin: 0px 0;
+  padding: 0px;
+}
+
+.avatar {
+  display: flex;
+  background-color: bisque;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 19px;
+  margin-right: 16px;
+}
+
+.user {
+  font-size: larger;
+  font-weight: 600;
+  /* margin: 0; */
+}
+
+.messageText {
+  font-size: medium;
+}
+
+.date {
+  font-size: small;
+}
+
+.messageDetailsDiv {
+  display: flex;
 }

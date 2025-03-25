@@ -23,36 +23,31 @@
     </script>
   </head>
   <body>
+    <%- include('header') %>
     <form
       id="newMessageForm"
       method="post"
-      action="/new"
+      action="/messages/new"
       onsubmit="validateForm(event)"
     >
-      <h3>Send your message to the world!</h3>
+      <input
+        class="nameInput"
+        type="text"
+        id="user"
+        name="messageUser"
+        placeholder="Type your name.."
+      />
       <div class="inputContainer">
         <textarea
           rows="5"
           type="text"
           id="text"
           name="messageText"
-          placeholder="Type your message.."
+          placeholder="Send your message to the world!"
           class="messageBox"
         ></textarea>
 
-        <input
-          style="display: block; width: 183px"
-          type="text"
-          id="user"
-          name="messageUser"
-          placeholder="Type your name.."
-        />
-        <button
-          style="display: flex; justify-self: flex-end; margin-top: 8px"
-          type="submit"
-        >
-          Send
-        </button>
+        <button class="sendBtn" type="submit">Send</button>
       </div>
     </form>
   </body>

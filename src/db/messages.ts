@@ -1,13 +1,15 @@
+import { getDayAndTime } from "src/utils/helpers/dateAndTime";
+
 const messages = [
   {
     text: "Hi there!",
     user: "Amando",
-    added: new Date(),
+    added: getDayAndTime(new Date()),
   },
   {
     text: "Hello World!",
     user: "Charles",
-    added: new Date(),
+    added: getDayAndTime(new Date()),
   },
 ];
 
