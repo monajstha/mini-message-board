@@ -18,7 +18,7 @@ app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
-app.use("/new", msgDetailsRouter);
+app.use("/messages", msgDetailsRouter);
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error(err);

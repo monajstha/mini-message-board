@@ -1,5 +1,12 @@
 <div>
-  <h3><%= message.user %></h3>
-  <p><%= message.text %></p>
-  <p><%= message.added %></p>
+  <%- include('header') %>
+
+  <div class="messageDetailsDiv">
+    <div class="avatar"><%= getAvatarInitials(message.user) %></div>
+    <div>
+      <p class="user"><%= message.user %></p>
+      <p class="messageText"><%= message.text %></p>
+      <p class="date"><%= message.added %></p>
+    </div>
+  </div>
 </div>

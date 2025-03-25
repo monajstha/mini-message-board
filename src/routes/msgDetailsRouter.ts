@@ -9,10 +9,10 @@ import { Router, Request, Response } from "express";
 const msgDetailsRouter: Router = Router();
 
 // Get new message form
-msgDetailsRouter.get("/", getNewMessageForm);
+msgDetailsRouter.get("/new", getNewMessageForm);
 
 // Post new messages
-msgDetailsRouter.post("/", postNewMessage);
+msgDetailsRouter.post("/new", postNewMessage);
 
 // Get message details
 msgDetailsRouter.get("/:msgId", getMessageDetails);

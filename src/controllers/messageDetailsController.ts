@@ -1,17 +1,25 @@
 import { Request, Response } from "express";
 import messages from "@db/messages";
+import getAvatarInitials from "src/utils/helpers/avatarInitials";
+import { getDayAndTime } from "src/utils/helpers/dateAndTime";
 
 const getMessageDetails = (req: Request, res: Response) => {
   const { msgId } = req.params;
   const message = messages.find((item, index) => {
     return index === +msgId;
   });
-  console.log({ message });
-  res.render("messageDetails", { title: "Message Details", message });
+  //   console.log({ message }, req);
+  res.render("messageDetails", {
+    title: "Message Details",
+    message,
+    path: req.path,
+    getAvatarInitials,
+  });
 };
 
 const getNewMessageForm = (req: Request, res: Response) => {
-  res.render("form");
+  console.log("path", req.path);
+  res.render("form", { path: "/messages/new" });
 };
 
 const postNewMessage = (req: Request, res: Response) => {
@@ -19,11 +27,11 @@ const postNewMessage = (req: Request, res: Response) => {
   messages.push({
     text: req.body.messageText,
     user: req.body.messageUser,
-    added: new Date(),
+    added: getDayAndTime(new Date()),
   });
 
   // Redirecting it to the index page
   res.redirect("/");
 };
 
-export { getMessageDetails, getNewMessageForm, postNewMessage };
+export { getNewMessageForm, postNewMessage, getMessageDetails };
