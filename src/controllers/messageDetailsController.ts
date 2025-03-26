@@ -2,12 +2,15 @@ import { Request, Response } from "express";
 import messages from "@db/messages";
 import getAvatarInitials from "src/utils/helpers/avatarInitials";
 import { getDayAndTime } from "src/utils/helpers/dateAndTime";
+import CustomNotFoundError from "@errors/CustomNotFoundError";
 
 const getMessageDetails = (req: Request, res: Response) => {
   const { msgId } = req.params;
   const message = messages.find((item, index) => {
     return index === +msgId;
   });
+
+  if (!message) throw new CustomNotFoundError("Message doesn't exist");
   //   console.log({ message }, req);
   res.render("messageDetails", {
     title: "Message Details",
