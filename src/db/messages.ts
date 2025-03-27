@@ -1,4 +1,4 @@
-import { getDayAndTime } from "src/utils/helpers/dateAndTime";
+import getDayAndTime from "@utils/helpers/dateAndTime";
 
 const messages = [
   {

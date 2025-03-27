@@ -11,4 +11,4 @@ const getDayAndTime = (date: Date) => {
   });
 };
 
-export { getDayAndTime };
+export default getDayAndTime;

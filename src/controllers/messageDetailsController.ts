@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import messages from "@db/messages";
-import getAvatarInitials from "src/utils/helpers/avatarInitials";
-import { getDayAndTime } from "src/utils/helpers/dateAndTime";
 import CustomNotFoundError from "@errors/CustomNotFoundError";
+import getDayAndTime from "@utils/helpers/dateAndTime";
+import getAvatarInitials from "@utils/helpers/avatarInitials";
 
 const getMessageDetails = (req: Request, res: Response) => {
   const { msgId } = req.params;
