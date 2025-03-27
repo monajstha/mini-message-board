@@ -2,6 +2,7 @@ import express, { Express, NextFunction, Request, Response } from "express";
 import path from "path";
 import indexRouter from "@routes/indexRouter";
 import msgDetailsRouter from "@routes/msgDetailsRouter";
+import CustomNotFoundError from "@errors/CustomNotFoundError";
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
@@ -20,6 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/messages", msgDetailsRouter);
 
+// Handle all unmatched routes
+app.get("*", (req, res) => {
+  throw new CustomNotFoundError("The page you are looking for isn't here :(");
+});
+
+// Every error thrown in the application, or the previous middleware function calling `next` with an error as an argument will eventually go to this middleware function
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error(err);
   res.status(err.statusCode || 500).send(err.message);
