@@ -8,11 +8,11 @@ const app: Express = express();
 const port = process.env.PORT || 3000;
 
 // declaring the use of ejs engine and to look for files inside views folder
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs");
 
 // serve static assets
-const assetsPath = path.join(__dirname, "public");
+const assetsPath = path.join(__dirname, "../public");
 app.use(express.static(assetsPath));
 
 // this app level express middleware parses form data to req.body
